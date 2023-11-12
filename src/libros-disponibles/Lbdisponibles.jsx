@@ -3,25 +3,31 @@ const Lbdisponibles = ({ ...prop }) => {
 
   return (
     <div
-      className={` bg-white relative md:h-[98%] md:mx-0 md:ml-4 md:mr-0 rounded-xl mb-2 md:mb-0  overflow-auto transition-all duration-300 ease-in-out delay-0 
+      className={` bg-white md:h-[100%] rounded-xl overflow-auto transition-all duration-300 ease-in-out delay-100  
     ${
-      showlistbooks === true ? " h-[10%] md:w-[70%]  " : "w-[100%] md:w-[100%] "
+      showlistbooks === true ? " h-[10%] md:w-[70%] overflow-hidden  " : "w-[100%] md:w-[100%] "
     }  `}
     >
-      <div className="bg-red-500 h-[8vh] rounded-xl mx-2 mt-2 ">
-        {/* <div className="bg-green-200 h-[8vh] "></div> */}
-      </div>
-      <div className="m-4 h-[75%] rounded-xl grid gap-4 auto-rows-[22rem] grid-cols-[repeat(auto-fill,minmax(15rem,1fr))]">
-        <div className="bg-blue-500 rounded-lg flex justify-end ">
-          <button onClick={() => setShowlistbooks(!showlistbooks)}>
-            animation
-          </button>
+      <div className="flex flex-col gap-2 justify-center p-1">
+        <div className="bg-red-500  h-[10vh] w-full rounded-xl ">
+          {/* <div className="bg-green-200 h-[8vh] "></div> */}
         </div>
-        <div className="bg-blue-500 rounded-lg  "></div>
-        <div className="bg-blue-500 rounded-lg  "></div>
-        <div className="bg-blue-500 rounded-lg  "></div>
-        <div className="bg-blue-500 rounded-lg  "></div>
-       
+        <div className=" p-1 h-[75%] rounded-xl grid gap-4 auto-rows-[22rem] grid-cols-[repeat(auto-fill,minmax(15rem,1fr))]">
+          <div className="bg-blue-500 rounded-lg flex justify-end ">
+          <button onClick={() => setShowlistbooks(!showlistbooks)}>
+              animation
+            </button>
+          </div>
+          <div className="bg-blue-500 rounded-lg flex justify-end "></div>
+          <div className="bg-blue-500 rounded-lg flex justify-end "></div>
+          <div className="bg-blue-500 rounded-lg flex justify-end "></div>
+          <div className="bg-blue-500 rounded-lg flex justify-end "></div>
+          <div className="bg-blue-500 rounded-lg flex justify-end "></div>
+          <div className="bg-blue-500 rounded-lg flex justify-end "></div>
+          <div className="bg-blue-500 rounded-lg flex justify-end "></div>
+          <div className="bg-blue-500 rounded-lg flex justify-end "></div>
+
+        </div>
       </div>
     </div>
   );
