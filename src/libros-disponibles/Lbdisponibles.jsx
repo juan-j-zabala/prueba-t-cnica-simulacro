@@ -21,11 +21,7 @@ const Lbdisponibles = ({ ...prop }) => {
         <div className="bg-blue-500 rounded-lg  "></div>
         <div className="bg-blue-500 rounded-lg  "></div>
         <div className="bg-blue-500 rounded-lg  "></div>
-        <div className="bg-red-500 rounded-lg  "></div>
-        <div className="bg-red-500 rounded-lg  "></div>
-        <div className="bg-red-500 rounded-lg  "></div>
-        <div className="bg-red-500 rounded-lg  "></div>
-        <div className="bg-red-500 rounded-lg  "></div>
+       
       </div>
     </div>
   );
