@@ -1,7 +1,9 @@
+import { useState } from "react";
 import libros from "../../../data/libros";
+// import downarrow from '../../../assets/down.svg'
+import EachBoook from "./eachbook/EachBoook";
 
-const GridOfBooks = ({ANIMATION_TRIGGER}) => {
-    libros
+const GridOfBooks = ({ ANIMATION_TRIGGER }) => {
 
   return (
     <div
@@ -9,15 +11,13 @@ const GridOfBooks = ({ANIMATION_TRIGGER}) => {
         ANIMATION_TRIGGER ? "max-md:hidden" : ""
       } `}
     >
-      <div className="bg-white rounded-lg "></div>
-      <div className="bg-white rounded-lg "></div>
-      <div className="bg-white rounded-lg "></div>
-      <div className="bg-white rounded-lg "></div>
-      <div className="bg-white rounded-lg "></div>
-      <div className="bg-white rounded-lg "></div>
-      <div className="bg-white rounded-lg "></div>
-      <div className="bg-white rounded-lg "></div>
-      <div className="bg-white rounded-lg "></div>
+      {libros.library.map((element, index) => {
+        return (
+          <div key={element.book.ISBN} className="bg-white rounded-lg overflow-hidden relative flex justify-center items-center ">
+            <EachBoook data={...element.book} />
+          </div>
+        );
+      })}
     </div>
   );
 };

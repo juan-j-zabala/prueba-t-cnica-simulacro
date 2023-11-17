@@ -9,8 +9,8 @@ const LitLectura = ({ ...prop }) => {
       flex flex-col items-center border pt-3  border-white gap-2  
     ${
       ANIMATION_TRIGGER
-        ? "md:h-[100%] md:w-[30%] h-[89%] "
-        : "h-[9%] md:absolute md:right-0 md:h-[0%] md:w-[0%] border-neutral-950"
+        ? "md:h-[100%] md:w-[30%] h-[89%]  "
+        : "h-[9%] md:absolute md:right-0 md:hidden md:h-[0%] md:w-[0%] border-neutral-950"
     } `}
     >
       {/* <p className={`${ANIMATION_TRIGGER ? "" : "" } `} >lista de lectura</p> */}

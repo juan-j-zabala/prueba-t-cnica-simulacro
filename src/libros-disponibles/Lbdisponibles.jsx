@@ -14,7 +14,9 @@ const Lbdisponibles = ({ ...prop }) => {
     }  `}
     >
       <div className="flex flex-col gap-2 justify-center p-1">
-        <div className="bg-red-500 h-[9.9vh] w-full rounded-xl "></div>
+        <div className="bg-red-500 h-[9.9vh] w-full rounded-xl ">
+          <button onClick={() => setShowlistbooks(!showlistbooks)}>lista de lectura</button>
+        </div>
         <GridOfBooks ANIMATION_TRIGGER={ANIMATION_TRIGGER} />
       </div>
     </div>
