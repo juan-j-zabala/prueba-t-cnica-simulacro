@@ -11,7 +11,7 @@ const GridOfBooks = ({ ANIMATION_TRIGGER }) => {
         ANIMATION_TRIGGER ? "max-md:hidden" : ""
       } `}
     >
-      {libros.library.map((element, index) => {
+      {libros.library.map((element) => {
         return (
           <div key={element.book.ISBN} className="bg-white rounded-lg overflow-hidden relative flex justify-center items-center ">
             <EachBoook data={...element.book} />

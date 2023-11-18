@@ -1,5 +1,8 @@
-const LitLectura = ({ ...prop }) => {
-  const { showlistbooks, setShowlistbooks } = prop;
+import { useContext } from "react";
+import { Context } from "../context/ContextProvider";
+
+const LitLectura = () => {
+  const [showlistbooks, setShowlistbooks ] = useContext(Context)
   const ANIMATION_TRIGGER = showlistbooks === true;
   console.log(showlistbooks);
 
