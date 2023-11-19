@@ -3,12 +3,24 @@ import downarrow from "../../../assets/down.svg";
 import uparrow from "../../../assets/up.svg";
 import { useContext } from "react";
 import { Context } from "../../../context/ContextProvider";
+import { motion, useAnimate } from "framer-motion";
+import { useEffect } from "react";
 
 const EachBoook = ({ ...props }) => {
+
   const [movieinfo, setMovieinfo] = useState(null);
   const [showlistbooks, setShowlistbooks] = useContext(Context);
+  const [scope, animate] = useAnimate()
   const TRIGGER_MOVIE = movieinfo === true;
   const { data } = props;
+
+  useEffect(() => {
+    if (movieinfo) {
+      animate("img", {y: 450})
+    }else {
+      animate("img", {y: 0})
+    }
+  }, [movieinfo])
 
   return (
     <>
@@ -39,13 +51,14 @@ const EachBoook = ({ ...props }) => {
           alt="down"
         />
       </button>
+      <div ref={scope} className="w-full h-full">
+
       <img
-        className={`w-full h-full rounded-lg relative ${
-          TRIGGER_MOVIE ? "top-[400px]" : ""
-        } `}
+        className="w-full h-full rounded-lg relative"
         src={data.cover}
         alt="books"
-      />
+        />
+        </div>
     </>
   );
 };
