@@ -18,7 +18,7 @@ const LitLectura = () => {
     >
       {/* <p className={`${ANIMATION_TRIGGER ? "" : "" } `} >lista de lectura</p> */}
       <div className={`bg-white h-[87%] w-[95%] rounded-xl flex justify-between p-2 ${ANIMATION_TRIGGER ? "" : "md:hidden"} `} >
-        <p className={`flex justify-center items-center ${ANIMATION_TRIGGER ? "hidden" : ""} `}>lista de lectura</p>
+        <p className={`flex justify-center items-center ${ANIMATION_TRIGGER ? "hidden" : ""} `}>2 libros lista de lectura</p>
         <button
           onClick={() => setShowlistbooks(!showlistbooks)}
           className={`bg-black text-white w-[25%] rounded-lg ${ANIMATION_TRIGGER ? "hidden" : ""} `}

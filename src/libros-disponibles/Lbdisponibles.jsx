@@ -11,7 +11,7 @@ const Lbdisponibles = () => {
 
   return (
     <div
-      className={` bg-neutral-950 md:h-[100%] rounded-xl overflow-auto transition-all duration-300 ease-in-out delay-0
+      className={` bg-neutral-950 md:h-[100%] rounded-xl overflow-auto transition-all duration-300 ease-in-out delay-0 scrollbar-none
     ${
       showlistbooks === true
         ? " h-[11%] md:w-[70%] "
