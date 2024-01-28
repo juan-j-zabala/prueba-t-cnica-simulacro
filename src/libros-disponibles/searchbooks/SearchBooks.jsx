@@ -1,5 +1,3 @@
-import { FiltroPaginas } from "./filtro-por-paginas/FiltroPaginas";
-import { FiltroGenero } from "./filtro-por-genero/FiltroGenero";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
@@ -14,32 +12,44 @@ export const SearchBooks = () => {
 
   return (
     <div className=" h-[9.9vh] w-full rounded-xl flex flex-row gap-2 ">
-      <div className=" w-[70%] rounded-xl flex flex-col ">
-        {/* <FiltroPaginas/> */}
-        {/* <FiltroGenero/> */}
+      <div className=" w-[66%] rounded-xl flex flex-row gap-2 ">
         <motion.form
+          transition={{ layout: { duration: 0 } }}
+          layout
           layoutId={1}
           onClick={() => setPopout(1)}
-          className={` bg-red-500 h-[50%] w-[100%] rounded-t-xl flex items-center justify-center ${
+          className={` bg-white h-[100%] w-[50%] hover:bg-red-700 hover:text-white rounded-xl flex items-center justify-center ${
             popout ? "hidden" : ""
           } `}
         >
-          <label>filtro de libroooos</label>
+          <motion.label
+            layout="position"
+            className="text-center font-bold text-xl md:text-3xl"
+          >
+            filtrar por paginas
+          </motion.label>
         </motion.form>
         <motion.form
+          transition={{ layout: { duration: 0 } }}
+          layout
           layoutId={2}
-          className={` bg-blue-300 h-[50%] rounded-b-xl flex items-center justify-center ${
+          className={` bg-white h-[100%] w-[50%] hover:bg-red-700 hover:text-white rounded-xl flex items-center justify-center ${
             popout ? "hidden" : ""
           } `}
           onClick={() => setPopout(2)}
           // onSubmit={handleSubmit(onSubmit)}
         >
-          <label> filtrar por genero </label>
+          <motion.label
+            layout="position"
+            className="text-center font-bold text-xl md:text-3xl"
+          >
+            filtrar por genero
+          </motion.label>
         </motion.form>
         <AnimatePresence>
           {popout === 1 ? (
             <motion.div
-              className="bg-white relative h-full rounded-xl flex flex-row  border-2 border-white "
+              className="bg-white relative h-full w-full rounded-xl flex flex-row  border-2 border-white "
               layoutId={popout}
             >
               <div className="flex flex-col md:w-[80%] w-[65%]  rounded-xl justify-center px-[5%] ">
@@ -68,7 +78,7 @@ export const SearchBooks = () => {
           {popout === 2 ? (
             <motion.div
               layoutId={popout}
-              className="bg-purple-500 h-full flex justify-center items-center rounded-xl  "
+              className="bg-white h-full w-full flex justify-center items-center rounded-xl  "
             >
               <select
                 {...register("genero")}

@@ -1,8 +1,9 @@
 const CounterBooks = () => {
   return (
-    <div className="bg-red-500 w-[30%] h-full rounded-xl  ">
-      <h2 className="md:text-3xl text-xl h-full rounded-xl text-center flex justify-center items-center  "> 12 Libros diponibles</h2>
-      {/* <h3 className="md:text-2xl "> 2 libros en lista de lectura</h3> */}
+    <div className="bg-red-700 w-[34%] h-full rounded-xl  ">
+      <h2 className="md:text-3xl text-xl text-white h-full font-bold rounded-xl text-center flex justify-center items-center  ">
+        12 Libros diponibles
+      </h2>
     </div>
   );
 };

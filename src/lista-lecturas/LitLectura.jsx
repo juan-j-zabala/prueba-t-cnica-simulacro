@@ -2,43 +2,50 @@ import { useContext } from "react";
 import { Context } from "../context/ContextProvider";
 
 const LitLectura = () => {
-  const [showlistbooks, setShowlistbooks ] = useContext(Context)
+  const [showlistbooks, setShowlistbooks] = useContext(Context);
   const ANIMATION_TRIGGER = showlistbooks === true;
   console.log(showlistbooks);
 
   return (
     <div
-      className={`bg-neutral-950 rounded-3xl mt-1  md:mt-0 transition-all duration-300 ease-in-out delay-0
-      flex flex-col items-center border pt-3  border-white gap-2  
+      className={`bg-neutral-950 rounded-xl mt-1  md:mt-2 transition-all duration-300 ease-in-out delay-0
+      flex flex-col items-center gap-2  
     ${
       ANIMATION_TRIGGER
-        ? "md:h-[100%] md:w-[30%] h-[89%]  "
+        ? "md:h-[100%] md:w-[30%] h-[89%]"
         : "h-[9%] md:absolute md:right-0 md:hidden md:h-[0%] md:w-[0%] border-neutral-950"
     } `}
     >
-      {/* <p className={`${ANIMATION_TRIGGER ? "" : "" } `} >lista de lectura</p> */}
-      <div className={`bg-white h-[87%] w-[95%] rounded-xl flex justify-between p-2 ${ANIMATION_TRIGGER ? "" : "md:hidden"} `} >
-        <p className={`flex justify-center items-center ${ANIMATION_TRIGGER ? "hidden" : ""} `}>2 libros lista de lectura</p>
+      <div
+        className={`bg-white h-full w-full rounded-xl flex gap-2 font-bold text-3xl ${ANIMATION_TRIGGER ? "" : "md:hidden"} `}
+      >
+        <p
+          className={`flex justify-center w-[70%] rounded-lg bg-red-700 text-white px-5 items-center ${ANIMATION_TRIGGER ? "hidden" : ""} `}
+        >
+          2 libros en lista de lectura
+        </p>
         <button
           onClick={() => setShowlistbooks(!showlistbooks)}
-          className={`bg-black text-white w-[25%] rounded-lg ${ANIMATION_TRIGGER ? "hidden" : ""} `}
+          className={`bg-white hover:bg-red-700 hover:text-white w-[30%] rounded-lg ${ANIMATION_TRIGGER ? "hidden" : ""} `}
         >
           open
         </button>
       </div>
-      <p
-        className={`text-white text-3xl bg-neutral-950 w-[92%] h-[10%] rounded-2xl p-4 border border-white 
+      <div
+        className={`text-white text-3xl bg-neutral-950 gap-2 w-[100%] h-[10%] rounded-2xl  
       flex items-center justify-between  
       ${ANIMATION_TRIGGER ? "" : "hidden"} `}
       >
-        lista de lectura
+        <h3 className="bg-red-700 text-white font-bold w-[70%] h-full rounded-lg flex items-center justify-center px-2">
+          lista de lectura
+        </h3>
         <button
           onClick={() => setShowlistbooks(!showlistbooks)}
-          className="bg-white w-[30%] h-full rounded-lg text-black "
+          className="bg-white w-[30%] h-full rounded-lg text-black font-bold hover:bg-red-700 hover:text-white "
         >
           close
         </button>
-      </p>
+      </div>
     </div>
   );
 };
