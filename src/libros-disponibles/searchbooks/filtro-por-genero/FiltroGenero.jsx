@@ -11,11 +11,10 @@ export const FiltroGenero = () => {
     <>
       <motion.form
         layoutId={2}
-        className={` bg-blue-300 h-[50%] rounded-b-xl  ${
-          popout === 2 ? "" : ""
-        } `}
+        className={` bg-blue-300 h-[50%] rounded-b-xl  ${popout === 2 ? "" : ""
+          } `}
         onClick={() => setPopout(2)}
-        // onSubmit={handleSubmit(onSubmit)}
+      // onSubmit={handleSubmit(onSubmit)}
       >
         <label> filtrar por genero </label>
       </motion.form>

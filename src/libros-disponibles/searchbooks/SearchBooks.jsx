@@ -1,5 +1,5 @@
 import { FiltroPaginas } from "./filtro-por-paginas/FiltroPaginas";
-import { FiltroGenero } from "./filtro-por-genero/filtroGenero";
+import { FiltroGenero } from "./filtro-por-genero/FiltroGenero";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
@@ -24,7 +24,7 @@ export const SearchBooks = () => {
             popout ? "hidden" : ""
           } `}
         >
-          <label>filtro de libros</label>
+          <label>filtro de libroooos</label>
         </motion.form>
         <motion.form
           layoutId={2}
@@ -45,7 +45,7 @@ export const SearchBooks = () => {
               <div className="flex flex-col md:w-[80%] w-[65%]  rounded-xl justify-center px-[5%] ">
                 <motion.p className="bg-white text-center md:mb-3 text-base ">
                   paginas: {rage}
-                </motion.p>
+                </motion.p>{" "}
                 <input
                   onChange={datafromrange}
                   className=" appearance-none  bg-zinc-700 rounded-xl   "
@@ -57,7 +57,12 @@ export const SearchBooks = () => {
                   step={20}
                 />
               </div>
-              <button className="bg-black text-white md:w-[20%] w-[35%] rounded-xl " onClick={() => setPopout(false)}>close</button>
+              <button
+                className="bg-black text-white md:w-[20%] w-[35%] rounded-xl "
+                onClick={() => setPopout(false)}
+              >
+                close
+              </button>
             </motion.div>
           ) : null}
           {popout === 2 ? (
@@ -80,7 +85,7 @@ export const SearchBooks = () => {
           ) : null}
         </AnimatePresence>
       </div>
-      <CounterBooks/>
+      <CounterBooks />
     </div>
   );
 };
