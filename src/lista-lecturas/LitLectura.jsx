@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { Context } from "../context/ContextProvider";
+import ListLecturaContent from "./listlecturacontent/ListLeacturaContent";
 
 const LitLectura = () => {
   const [showlistbooks, setShowlistbooks] = useContext(Context);
@@ -17,8 +18,9 @@ const LitLectura = () => {
     } `}
     >
       <div
-        className={`bg-white h-full w-full rounded-xl flex gap-2 font-bold text-3xl ${ANIMATION_TRIGGER ? "" : "md:hidden"} `}
+        className={`bg-neutral-950 h-full w-full rounded-xl flex gap-2 font-bold text-3xl ${ANIMATION_TRIGGER ? "" : "md:hidden"}`}
       >
+        <ListLecturaContent />
         <p
           className={`flex justify-center w-[70%] rounded-lg bg-red-700 text-white px-5 items-center ${ANIMATION_TRIGGER ? "hidden" : ""} `}
         >
