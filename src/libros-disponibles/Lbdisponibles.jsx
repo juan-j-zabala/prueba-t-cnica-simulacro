@@ -4,9 +4,8 @@ import { Context } from "../context/ContextProvider";
 import { useState } from "react";
 import { SearchBooks } from "./searchbooks/SearchBooks";
 
-
 const Lbdisponibles = () => {
-  const [showlistbooks, setShowlistbooks, x ] = useContext(Context)
+  const [showlistbooks, setShowlistbooks] = useContext(Context);
   const ANIMATION_TRIGGER = showlistbooks === true;
 
   return (
@@ -19,7 +18,7 @@ const Lbdisponibles = () => {
     }  `}
     >
       <div className="flex flex-col gap-2 justify-center p-1">
-        <SearchBooks/>
+        <SearchBooks />
         {/* <div className="bg-white h-[9.9vh] w-full rounded-xl ">
         </div> */}
         <GridOfBooks ANIMATION_TRIGGER={ANIMATION_TRIGGER} />

@@ -5,7 +5,6 @@ export const Context = createContext(null);
 export const ContextProvider = (props) => {
   const [showlistbooks, setShowlistbooks] = useState(null);
   const [listadelectura, setListadelectura] = useState([]);
-  console.log(listadelectura);
 
   return (
     <Context.Provider
@@ -22,4 +21,3 @@ export const ContextProvider = (props) => {
 };
 
 export default ContextProvider;
-

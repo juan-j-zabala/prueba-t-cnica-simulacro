@@ -5,20 +5,19 @@ import ListLecturaContent from "./listlecturacontent/ListLeacturaContent";
 const LitLectura = () => {
   const [showlistbooks, setShowlistbooks] = useContext(Context);
   const ANIMATION_TRIGGER = showlistbooks === true;
-  console.log(showlistbooks);
 
   return (
     <div
-      className={`bg-neutral-950 rounded-xl mt-1  md:mt-2 transition-all duration-300 ease-in-out delay-0
-      flex flex-col items-center gap-2  
+      className={`bg-neutral-950  rounded-xl mt-1 md:mt-2 overflow-auto transition-all duration-300 ease-in-out delay-0
+      flex flex-col items-center gap-2
     ${
       ANIMATION_TRIGGER
         ? "md:h-[100%] md:w-[30%] h-[89%]"
-        : "h-[9%] md:absolute md:right-0 md:hidden md:h-[0%] md:w-[0%] border-neutral-950"
+        : "h-[10%] md:absolute md:right-0 md:hidden md:h-[0%] md:w-[0%] border-neutral-950"
     } `}
     >
       <div
-        className={`bg-neutral-950 h-full w-full rounded-xl flex gap-2 font-bold text-3xl ${ANIMATION_TRIGGER ? "" : "md:hidden"}`}
+        className={`bg-neutral-950 h-[90%] w-full rounded-xl flex gap-2 font-bold text-3xl ${ANIMATION_TRIGGER ? "" : "md:hidden"}`}
       >
         <ListLecturaContent />
         <p
