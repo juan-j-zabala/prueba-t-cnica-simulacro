@@ -13,7 +13,7 @@ const ListLecturaContent = () => {
     >
       {listadelectura.map((item) => {
         return (
-          <div className="bg-green-700 rounded-xl " key={item.ISBN}>
+          <div className="bg-white rounded-xl " key={item.ISBN}>
             {/* <h2>{item.title}</h2> */}
             <img className="w-full h-full rounded-xl" src={item.cover} />
           </div>

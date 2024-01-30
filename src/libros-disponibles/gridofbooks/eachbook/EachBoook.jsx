@@ -13,7 +13,6 @@ const EachBoook = ({ ...props }) => {
   const [scope, animate] = useAnimate();
   const TRIGGER_MOVIE = movieinfo === true;
   const { data, index } = props;
-  // console.log(listadelectura);
 
   useEffect(() => {
     if (movieinfo) {
@@ -23,14 +22,23 @@ const EachBoook = ({ ...props }) => {
     }
   }, [movieinfo]);
 
+  const Handlelistadelectura = () => {
+    setShowlistbooks(true);
+    console.log(listadelectura.find((item) => item === data));
+    const bookinlist = listadelectura.find((item) => item === data);
+
+    if (bookinlist) {
+      return;
+    }
+
+    setListadelectura([...listadelectura, data]);
+  };
+
   return (
     <>
       <div className="text-white bg-neutral-950 w-[98%] h-[99%] absolute rounded-md p-2 pt-3  ">
         <button
-          onClick={() => {
-            setShowlistbooks(true);
-            setListadelectura([...listadelectura, data]);
-          }}
+          onClick={Handlelistadelectura}
           className="bg-white text-black h-[10%] w-[80%] hover:bg-red-700 hover:text-white font-semibold px-2 text-2xl rounded-lg hover:scale-105 "
         >
           Para lista de lectura

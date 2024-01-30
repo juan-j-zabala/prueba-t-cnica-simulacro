@@ -2,13 +2,19 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import CounterBooks from "./counterbooks/CounterBooks";
+import libros from "../../../data/libros";
 
 export const SearchBooks = () => {
   const [popout, setPopout] = useState(false);
-  const [rage, setrage] = useState("");
+  const [rage, setrage] = useState();
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => console.log(data);
-  const datafromrange = (e) => setrage(e.target.value);
+  const datafromrange = (e) => {
+    setrage(e.target.value);
+    const result = libros.library.filter((item) => item.book.pages <= rage);
+    console.log(result);
+  };
+  console.log(rage);
 
   return (
     <div className=" h-[9.9vh] w-full rounded-xl flex flex-row gap-2 ">
@@ -62,9 +68,9 @@ export const SearchBooks = () => {
                   type="range"
                   name="filter"
                   id=""
-                  min={40}
-                  max={1200}
-                  step={20}
+                  min={20}
+                  max={1300}
+                  step={15}
                 />
               </div>
               <button
